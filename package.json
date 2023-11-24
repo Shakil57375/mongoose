@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "mongoose": "^8.0.1"
+  },
+  "name": "mongoose",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "scripts": {
+    "start" : "nodemon script.js"
+  },
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
