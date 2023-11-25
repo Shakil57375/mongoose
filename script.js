@@ -79,9 +79,21 @@ run(); */
 run();
  */
 // delete one
-async function run() {
+/* async function run() {
   try {
     const user = await User.deleteOne({name : "rahim"})
+    console.log(user);
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
+run(); */
+
+// find documents which name is equals to rahi (with mongoose method)
+async function run() {
+  try {
+    const user = await User.where("name").equals("rahim")
     console.log(user);
   } catch (e) {
     console.log(e.message);
