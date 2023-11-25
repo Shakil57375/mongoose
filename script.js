@@ -21,7 +21,8 @@ async function run() {
         city: "Feni",
       },
     });
-    //   change the user name
+    user.createAt = 5
+    // changed name to rahim
     user.name = "rahim";
     await user.save();
     console.log(user);

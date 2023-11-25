@@ -10,7 +10,23 @@ const userSchema = new mongoose.Schema({
   },
   age: {
     type: Number,
-    min: 18,
+    validate: {
+      validator: function(value) {
+        if (isNaN(value)) {
+          // Check if age is a valid number
+          return false;
+        } else if (value < 18) {
+          // Check if age is less than 18
+          return false;
+        } else if (value > 120) {
+          // Check if age is greater than 120
+          return false;
+        }
+        // Age is valid
+        return true;
+      },
+      message: 'Age must be a valid number between 18 and 120',
+    },
   },
   email: {
     type: String,
@@ -30,6 +46,7 @@ const userSchema = new mongoose.Schema({
   createAt: {
     type: Date,
     default: () => new Date().toLocaleString(),
+    immutable : true
   },
 
   updatedAt: {
