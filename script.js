@@ -109,7 +109,11 @@ async function run() {
       .gt("14")
       .lt("33")
       .where("name")
-      .equals("rahi");
+      .equals("rahim")
+      .limit(2)
+      .select("age")
+      ;
+
     console.log(user);
   } catch (e) {
     console.log(e.message);
