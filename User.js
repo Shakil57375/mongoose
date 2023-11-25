@@ -6,7 +6,10 @@ const addressSchema = new mongoose.Schema({
 const userSchema = new mongoose.Schema({
   name: String,
   age: Number,
-  email: String,
+  email: {
+    type : String,
+    required : true
+  },
   createAt: Date,
   updatedAt: Date,
   bestFriend: {
