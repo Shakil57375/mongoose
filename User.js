@@ -10,6 +10,8 @@ const userSchema = new mongoose.Schema({
   },
   age: {
     type: Number,
+    min : 12,
+    max : 50,
     validate: {
       validator: function(value) {
         if (isNaN(value)) {
@@ -32,6 +34,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     unique: true,
     required: true,
+    // length must be 10 or more character.
+    minLength : 10,
     trim: true,
     lowercase: true,
     validate: {
