@@ -4,11 +4,28 @@ const addressSchema = new mongoose.Schema({
   city: String,
 });
 const userSchema = new mongoose.Schema({
-  name: String,
-  age: Number,
+  name: {
+    type: String,
+    required: true,
+  },
+  age: {
+    type: Number,
+    min: 18,
+  },
   email: {
-    type : String,
-    required : true
+    type: String,
+    unique: true,
+    required: true,
+    trim: true,
+    lowercase: true,
+    validate: {
+      validator: function (value) {
+        // Custom email validation logic
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(value);
+      },
+      message: "Invalid email format",
+    },
   },
   createAt: Date,
   updatedAt: Date,
