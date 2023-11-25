@@ -55,9 +55,33 @@ run(); */
 
 run(); */
 // findOne document
-async function run() {
+/* async function run() {
   try {
     const user = await User.findOne({name : "rahi"})
+    console.log(user);
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
+run(); */
+
+// check exist or not
+/* async function run() {
+  try {
+    const user = await User.exists({name : "rahim"})
+    console.log(user);
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
+run();
+ */
+// delete one
+async function run() {
+  try {
+    const user = await User.deleteOne({name : "rahim"})
     console.log(user);
   } catch (e) {
     console.log(e.message);
