@@ -23,7 +23,7 @@ async function run() {
     });
     user.createAt = 5;
     // changed name to rahim
-    user.name = "rahim";
+    user.name = "rahi";
     await user.save();
     console.log(user);
   } catch (e) {
