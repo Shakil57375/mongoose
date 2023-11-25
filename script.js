@@ -10,7 +10,15 @@ mongoose
   });
 
 async function run() {
-  const user = await User.create({ name: "Shakil", age: 21 });
+  const user = await User.create({
+    name: "Shakil",
+    age: 21,
+    hobbies: ["coding", "Praying"],
+    address : {
+        street : "Feni Sadar, Feni",
+        city : "Feni"
+    }
+  });
   //   change the user name
   user.name = "rahim";
   await user.save();
