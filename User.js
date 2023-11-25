@@ -27,8 +27,15 @@ const userSchema = new mongoose.Schema({
       message: "Invalid email format",
     },
   },
-  createAt: Date,
-  updatedAt: Date,
+  createAt: {
+    type: Date,
+    default: () => new Date().toLocaleString(),
+  },
+
+  updatedAt: {
+    type: Date,
+    default: () => new Date().toLocaleString(),
+  },
   bestFriend: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
