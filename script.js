@@ -33,9 +33,20 @@ mongoose
 
 run(); */
 // find document by id
-async function run() {
+/* async function run() {
   try {
     const user = await User.findById("6561b401692b2316a5446cc6")
+    console.log(user);
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
+run(); */
+// find document
+async function run() {
+  try {
+    const user = await User.find({name : "rahi"})
     console.log(user);
   } catch (e) {
     console.log(e.message);
