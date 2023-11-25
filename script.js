@@ -93,7 +93,7 @@ run(); */
 // find documents which name which is equals to rahi (with mongoose method)
 async function run() {
   try {
-    const user = await User.where("name").equals("rahim")
+    const user = await User.where("name").equals("rahim");
     console.log(user);
   } catch (e) {
     console.log(e.message);
@@ -102,10 +102,14 @@ async function run() {
 
 run();
 
-// find documents which age which is grater then 14
+// find documents which age which is grater then 14 and where the name is equals to rahim.
 async function run() {
   try {
-    const user = await User.where("name").gt("14")
+    const user = await User.where("age")
+      .gt("14")
+      .lt("33")
+      .where("name")
+      .equals("rahi");
     console.log(user);
   } catch (e) {
     console.log(e.message);
