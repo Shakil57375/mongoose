@@ -44,9 +44,20 @@ run(); */
 
 run(); */
 // find document
-async function run() {
+/* async function run() {
   try {
     const user = await User.find({name : "rahi"})
+    console.log(user);
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
+run(); */
+// findOne document
+async function run() {
+  try {
+    const user = await User.findOne({name : "rahi"})
     console.log(user);
   } catch (e) {
     console.log(e.message);
