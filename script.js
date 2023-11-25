@@ -9,7 +9,7 @@ mongoose
     console.error("Error connecting to MongoDB:", error);
   });
 
-async function run() {
+/* async function run() {
   try {
     const user = await User.create({
       name: "Shakil",
@@ -25,6 +25,17 @@ async function run() {
     // changed name to rahim
     user.name = "rahi";
     await user.save();
+    console.log(user);
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
+run(); */
+// find document by id
+async function run() {
+  try {
+    const user = await User.findById("6561b401692b2316a5446cc6")
     console.log(user);
   } catch (e) {
     console.log(e.message);
