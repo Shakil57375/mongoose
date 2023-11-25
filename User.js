@@ -71,7 +71,7 @@ const userSchema = new mongoose.Schema({
   },
   bestFriend: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "user",
   },
   hobbies: [String],
   address: addressSchema,

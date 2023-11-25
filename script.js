@@ -110,9 +110,10 @@ async function run() {
       .lt("33")
       .where("name")
       .equals("rahim")
-      .limit(2)
-      .select("age")
-      ;
+      .limit(1)
+      .select("age");
+    user[0].bestFriend = "65618c57d6769dfe337cd938";
+    await user[0].save();
 
     console.log(user);
   } catch (e) {
